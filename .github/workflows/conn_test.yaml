@@ -19,9 +19,9 @@ jobs:
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::508909599548:role/github-actions-oidc
+          role-to-assume: arn:aws:iam::${{secrets.AWS_ACCOUNT_ID}}:role/github-actions-oidc
           aws-region: eu-central-1
 
-      - name: Debug whoami
-        run: aws sts get-caller-identity || true
+      - name: Fetch the caller identity
+        run: aws sts get-caller-identity
 
