@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::508909599548:role/github-actions-oidc-role
+          role-to-assume: arn:aws:iam::508909599548:role/github-actions-oidc
           aws-region: eu-central-1
 
       - run: aws sts get-caller-identity
